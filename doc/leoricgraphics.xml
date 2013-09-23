@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<fpdoc-descriptions><package name="lazarus"><module name="LeoricGraphics">
+
+  <element name="TGraphicsMode">
+    <short>Graphics mode structure</short>
+    <descr>
+      Plain old data structure representing the geometry
+      of a graphics mode (screen resolution).
+    </descr>
+  </element>
+  <element name="TGraphicsMode.Height">
+    <short>Resolution Height</short>
+    <descr>Screen resolution height (Y axis) in pixels.</descr>
+  </element>
+  <element name="TGraphicsMode.Weidth">
+    <short>Resolution Width</short>
+    <descr>Screen resolution width (X axis) in pixels.</descr>
+  </element>
+
+  <element name="TGraphicsModes">
+    <short>Collection of graphics modes</short>
+    <descr>
+      Collection of grahpics modes, array of TGraphicsMode objects.
+      Used to return a list of supported graphics modes.
+    </descr>
+  </element>
+
+  <element name="TLeoricGraphicsEngine">
+    <short>Main Leoric graphics engine object</short>
+    <descr>
+      This is the object through which most graphical operations of the
+      Leoric Graphics Engine happen.
+      It initializes the graphics engine, and manages the rendering loop.
+      The initialisation of this class through the Create function is
+      very important, as function calls on an uninitialised graphics object
+      will raise exceptions.
+    </descr>
+  </element>
+  <element name="TLeoricGraphicsEngine.CreateForm">
+    <short>Constructor</short>
+    <descr>
+      Initialises an instance of the LeoricGraphicsEngine object.
+      It is extremely important that this function be called before
+      calling any other functions, or exceptions will be raised.
+    </descr>
+  </element>
+  <element name="TLeoricGraphicsEngine.Destroy">
+    <short>Destructor</short>
+    <descr>
+      Performs cleanup for the graphics system. It is automatically
+      called when you call .Free() - Since Free() also includes a nil
+      check, you should use it instead.
+    </descr>
+  </element>
+  <element
+    name="TLeoricGraphicsEngine.GetAvailableDisplayModesForCurrentDisplay">
+    <short>Returns a list of available screen resolutions.</short>
+    <descr>
+      This function returns a list of available display modes for the
+      currently active display head.
+    </descr>
+    <seealso>
+      TGraphicsModes
+      TGraphicsMode
+    </seealso>
+  </element>
+  <element name="TLeoricGraphicsEngine.EUninitializedException">
+    <short>Uninitialized Exception</short>
+    <descr>
+      This exception is raised when a function is called without initializing
+      the TLeoricGraphicsEngine through the Create constructor.
+    </descr>
+  </element>
+
+</module></package></fpdoc-descriptions>

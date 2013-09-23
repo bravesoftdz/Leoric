@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<fpdoc-descriptions><package name="lazarus"><module name="LeoricMessages">
+
+  <element name="TLeoricSeverity">
+    <short>Message severity level</short>
+    <descr>
+      This enum defines the message severity level for debug/info/error
+      messages handled by the LeoricMessageHandler.
+    </descr>
+  </element>
+  <element name="TLeoricSeverity.Severity_None">
+    <short>Message severity of None</short>
+    <descr>
+      This is the default severity messages are initialized with.
+      Messages with Severity_None are never displayed.
+    </descr>
+  </element>
+  <element name="TLeoricSeverity.Severity_Info">
+    <short>Message severity level info</short>
+    <descr>
+      Intended for informational messages. These messages are only visible
+      in output in the highest debug level setting.
+    </descr>
+  </element>
+  <element name="TLeoricSeverity.Severity_Debug">
+    <short>Message severity level debug</short>
+    <descr>
+      Intended for debug messages. These messages are only visible in output
+      with a verbosity level of 'debug' or 'info'
+    </descr>
+  </element>
+  <element name="TLeoricSeverity.Severity_Warning">
+    <short>Message severity level warning</short>
+    <descr>
+      Intended for non-fatal errors. These messages are visible in output
+      with a verbosity level of 'warning' or higher.
+    </descr>
+  </element>
+  <element name="TLeoricSeverity.Severity_Error">
+    <short>Message severity level error</short>
+    <descr>
+      Intended for fatal-errors which do not trigger an exception for later
+      handling by calling objects. These messages are always visible in output.
+    </descr>
+  </element>
+
+  <element name="TLeoricMessage">
+    <short>Leoric message object</short>
+    <descr>
+      This class defines a debug message. It contains the message string,
+      message code (a numerical identifier), and the message severity level.
+    </descr>
+  </element>
+  <element name="TLeoricMessage.Create">
+    <short>Constructor</short>
+    <descr>
+      Message object constructor. It initializes the code to 0, the severity
+      to Severity_None, and the message text to an empty string.
+    </descr>
+  </element>
+  <element name="TLeoricMessage.Code">
+    <short>Message code identifier</short>
+    <descr>
+      Numeric identifier for this message.
+    </descr>
+  </element>
+  <element name="TLeoricMessage.Message">
+    <short>Message text</short>
+    <descr>
+      String with message text.
+    </descr>
+  </element>
+  <element name="TLeoricMessage.Severity">
+    <short>Message severity level</short>
+    <descr>
+      The message severity level indicates under which verbosity
+      levels the message text will be shown in program output.
+    </descr>
+    <seealso>TLeoricSeverity</seealso>
+  </element>
+
+  <element name="TLeoricMessageHandler">
+    <short>Message handler object</short>
+    <descr>
+      The message handler allows storing and retrieving of error, debug, and
+      informational messages through a central system.
+    </descr>
+  </element>
+  <element name="TLeoricMessageHandler.AddMessage">
+    <short>Add message to message handler</short>
+    <descr>
+      <b>TLeoricMessageHandler.AddMessage(Message : TLeoricMessage)</b>
+      Adds a message object to the message handler.
+      <b>TLeoricMessageHandler.AddMessage(Message : String; Code : Word;
+           Severity : TLeoricSeverity)</b>
+      Creates a message object using given message string, code, and severity
+      and adds it to the message handler.
+    </descr>
+    <seealso>
+      TLeoricMessage
+      TLeoricSeverity
+    </seealso>
+  </element>
+  <element name="TLeoricMessageHandler.Messages">
+    <short>Messages property</short>
+    <descr>
+      Provides access to the array of messages in the message handler.
+    </descr>
+  </element>
+
+</module></package></fpdoc-descriptions>

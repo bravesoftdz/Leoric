@@ -1,0 +1,25 @@
+program project1;
+
+{$mode objfpc}{$H+}
+{$linklib gcc}
+{$linklib SDLmain}
+
+uses
+  {$IFDEF UNIX}{$IFDEF UseCThreads}
+  cthreads,
+  {$ENDIF}{$ENDIF}
+  Interfaces, // this includes the LCL widgetset
+  Forms, Unit1, LeoricMessages
+  { you can add units after this };
+
+{$R *.res}
+
+begin
+
+  RequireDerivedFormResource := True;
+  Application.Initialize;
+  Application.CreateForm(TFrmMainWindow, FrmMainWindow);
+  Application.Run;
+
+end.
+
